@@ -1,0 +1,16 @@
+default-timeout=500
+
+font=Ibm Plex Sans 11
+background-color=#1c1c1e
+text-color=#c0caf5
+width=350
+margin=0,20,20
+padding=10
+border-size=0
+border-color=#414868
+border-radius=10
+default-timeout=10000
+group-by=summary
+
+[grouped]
+format=<b>%s</b>\n%b
