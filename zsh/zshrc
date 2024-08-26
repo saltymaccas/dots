@@ -148,6 +148,10 @@ if [ -f /bin/starship ]; then
   eval "$(/bin/starship init zsh)"
 fi
 
+if [ -f /bin/zoxide ]; then
+  eval "$(zoxide init zsh)"
+fi
+
 if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh
 fi
