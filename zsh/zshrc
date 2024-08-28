@@ -157,6 +157,7 @@ if [ -f $HOME/.config/alias.sh ]; then
 fi
 
 alias pubip="curl http://ifconfig.me"
+alias timestamp="date -u +"%Y-%m-%dT%H:%M:%SZ""
 alias s="sudo"
 alias se="sudoedit"
 
