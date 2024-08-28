@@ -156,6 +156,7 @@ if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh
 fi
 
+alias pubip="curl http://ifconfig.me"
 alias s="sudo"
 alias se="sudoedit"
 
