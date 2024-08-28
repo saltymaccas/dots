@@ -130,12 +130,6 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-
 # Kitty Integration
 if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
 	export KITTY_SHELL_INTEGRATION="enabled"
@@ -156,7 +150,17 @@ if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh
 fi
 
+# some more ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias status="systemctl status"
+alias start="systemctl start"
+alias stop="systemctl stop"
+
 alias pubip="curl http://ifconfig.me"
+
 alias timestamp="date -u +"%Y-%m-%dT%H:%M:%SZ""
 alias s="sudo"
 alias se="sudoedit"
