@@ -158,6 +158,8 @@ alias l='ls -CF'
 alias status="systemctl status"
 alias start="systemctl start"
 alias stop="systemctl stop"
+alias restart="systemctl restart"
+alias daemon-reload="systemctl daemon-reload"
 
 alias pubip="curl http://ifconfig.me"
 
