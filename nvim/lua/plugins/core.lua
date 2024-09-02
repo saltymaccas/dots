@@ -1,4 +1,4 @@
 return {
-	{ "LazyVim/LazyVim", keys = { { "<leader>l", false } }, opts = { colorscheme = "catppuccin" } },
+	{ "LazyVim/LazyVim", opts = { colorscheme = "rose-pine" } },
 	{ "williamboman/mason.nvim", keys = false },
 }

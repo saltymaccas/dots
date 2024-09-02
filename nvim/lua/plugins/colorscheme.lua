@@ -16,21 +16,13 @@ return {
 			transparent_background = true,
 		},
 	},
-	{ "Mofiqul/vscode.nvim" },
-	{ "marko-cerovac/material.nvim" },
-	{ "olimorris/onedarkpro.nvim" },
-	{ "sainnhe/sonokai" },
-	{ "craftzdog/solarized-osaka.nvim" },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		opts = {
 			styles = {
-				transperency = true,
+				transparency = true,
 			},
 		},
-		config = function(_, opts)
-			require("rose-pine").setup(opts)
-		end,
 	},
 }
