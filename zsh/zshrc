@@ -54,6 +54,14 @@ fi
 
 syntaxhighlighting_file="/usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh"
 
+# rose-pine fzf with transperent background
+export FZF_DEFAULT_OPTS="
+    --color=fg:#908caa,hl:#ebbcba
+    --color=fg+:#e0def4,hl+:#ebbcba
+    --color=border:#403d52,header:#31748f,gutter:#191724
+    --color=pointer:#c4a7e7,marker:#ebbc92,prompt:#908caa
+    "
+
 
     # enable syntax-highlighting
 if [ -f $syntaxhighlighting_file ]; then
@@ -145,6 +153,8 @@ fi
 if [ -f /bin/zoxide ]; then
   eval "$(zoxide init zsh)"
 fi
+
+source <(fzf --zsh)
 
 if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh

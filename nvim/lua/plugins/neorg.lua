@@ -27,6 +27,11 @@ return {
 					["core.completion"] = { config = { engine = "nvim-cmp" } },
 					["core.latex.renderer"] = {},
 					["core.ui.calendar"] = {},
+					["core.text-objects"] = {},
+					["core.itero"] = {},
+					["core.pivot"] = {},
+					["core.promo"] = {},
+					["core.looking-glass"] = {},
 					["core.dirman"] = {
 						config = {
 							workspaces = {
