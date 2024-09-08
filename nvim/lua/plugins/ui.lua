@@ -16,6 +16,7 @@ return {
 	},
 	{
 		"nvimdev/dashboard-nvim",
+		enabled = false,
 	},
 	{ "3rd/image.nvim" },
 	{
