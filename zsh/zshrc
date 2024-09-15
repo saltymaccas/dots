@@ -147,11 +147,11 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
 fi
 
 if [ -f /bin/starship ]; then
-  eval "$(/bin/starship init zsh)"
+        eval "$(/bin/starship init zsh)"
 fi
 
 if [ -f /bin/zoxide ]; then
-  eval "$(zoxide init zsh)"
+        eval "$(zoxide init zsh)"
 fi
 
 source <(fzf --zsh)
@@ -160,18 +160,27 @@ if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh
 fi
 
+if [[ $XDG_SESSION_DESKTOP == "Hyprland" ]]; then
+  alias windows="hyprctl clients"
+fi
+
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias icat="kitten icat"
+if [[ $TERM == *kitty* ]]; then
+  alias icat="kitten icat"
+fi
 
 alias status="systemctl status"
 alias start="systemctl start"
 alias stop="systemctl stop"
 alias restart="systemctl restart"
 alias daemon-reload="systemctl daemon-reload"
+
+alias sys="systemctl"
+alias usys="systemctl --user"
 
 alias pubip="curl http://ifconfig.me"
 
