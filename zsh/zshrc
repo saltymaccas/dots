@@ -190,5 +190,3 @@ alias s="sudo"
 alias se="sudoedit"
 
 alias v="$EDITOR"
-
-source "$DOTFILE_DIR/zsh/starship.zsh"
