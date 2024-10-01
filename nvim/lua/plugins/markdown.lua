@@ -12,7 +12,7 @@ return {
 	},
 	{
 		"MeanderingProgrammer/markdown.nvim",
-		enabled = false,
+		-- enabled = false,
 	},
 	{
 		"vhyrro/luarocks.nvim",

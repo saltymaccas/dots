@@ -25,7 +25,11 @@ return {
 					["core.defaults"] = {},
 					["core.concealer"] = {},
 					["core.completion"] = { config = { engine = "nvim-cmp" } },
-					["core.latex.renderer"] = {},
+					["core.latex.renderer"] = {
+						config = {
+							conceal = true,
+						},
+					},
 					["core.ui.calendar"] = {},
 					["core.text-objects"] = {},
 					["core.itero"] = {},

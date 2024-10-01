@@ -24,12 +24,11 @@ return {
 		dependencies = {
 			"3rd/image.nvim",
 		},
-
 		opts = { -- you can just pass {}, defaults below
 			renderer_options = {
 				mermaid = {
-					background = nil, -- nil | "transparent" | "white" | "#hex"
-					theme = nil, -- nil | "default" | "dark" | "forest" | "neutral"
+					background = "transparent", -- nil | "transparent" | "white" | "#hex"
+					theme = "dark", -- nil | "default" | "dark" | "forest" | "neutral"
 					scale = 1, -- nil | 1 (default) | 2  | 3 | ...
 				},
 				plantuml = {
