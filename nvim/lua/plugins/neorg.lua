@@ -8,6 +8,7 @@ return {
 	},
 	{
 		"nvim-neorg/neorg",
+		enabled = vim.fn.hostname() == "saturn",
 		version = "*",
 		lazy = false,
 		ft = "norg",
