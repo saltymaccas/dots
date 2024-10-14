@@ -151,7 +151,9 @@ if [ -f /bin/zoxide ]; then
         eval "$(zoxide init zsh)"
 fi
 
-source <(fzf --zsh)
+if [ -f /bin/fzf ]; then
+    source <(fzf --zsh)
+fi
 
 if [ -f $HOME/.config/alias.sh ]; then
   source $HOME/.config/alias.sh
