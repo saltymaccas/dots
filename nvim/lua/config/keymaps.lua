@@ -1,7 +1,3 @@
-local map = vim.keymap.set
-
-map({ "n" }, "}", "<cmd>bnext<cr>")
-map({ "n" }, "{", "<cmd>bprevious<cr>")
-
-vim.keymap.del("n", "<Space>l")
-vim.keymap.del("n", "<Space>L")
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
