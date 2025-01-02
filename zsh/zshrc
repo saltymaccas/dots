@@ -198,6 +198,7 @@ configure_history
 setup_prompt
 
 
+alias fetch="clear && ${FETCH:-fastfetch}"
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'

@@ -15,6 +15,7 @@
     "tray",
     "group/custom-performance",
     "group/custom-power",
+    "backlight",
     "group/custom-audio",
     "network"
     // "group/powermenu"
@@ -53,6 +54,14 @@
       "custom/quit",
       "custom/lock",
       "custom/reboot",
+    ]
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󱩎",
+      "󱩒",
+      "󰛨",
     ]
   },
   "idle_inhibitor": {
