@@ -85,6 +85,10 @@ $os\
 $battery\
 $time"""
 
+[hostname]
+ssh_symbol = ""
+format = "[$ssh_symbol$hostname]($style)"
+
 [fill]
 symbol = ' '
 
