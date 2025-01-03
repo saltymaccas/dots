@@ -42,7 +42,7 @@ Arc-Dark Color Scheme
 /* Reset all styles */
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 0px;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -53,13 +53,13 @@ Arc-Dark Color Scheme
 /* The whole bar */
 window#waybar {
   /* color: #dfdfdf; */
-  background-color: rgba(0, 0, 0, 0);
   /* background-color: rgba(8, 0, 37, 0.85); */
-  /* background-color: rgba(0,0,0,0); */
+  background-color: rgba(0, 0, 0, 0);
   font-family: jetbrainsmono, symbolsnerdfont;
   font-size: 14px;
   font-weight: normal;
-  border-radius: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Every modules */
@@ -76,7 +76,7 @@ window#waybar {
 #custom-audio,
 #workspaces {
   background-color: rgba(17, 17, 27, 0.7);
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 0px 6px;
   margin: 0px 3px;
 
@@ -179,13 +179,11 @@ window#waybar {
 
 #workspaces button {
   /* border-bottom: 3px solid transparent; */
-  color: #dfdfdf;
 }
 
 #workspaces button.active {
   border-bottom: 1px solid #cba6f7;
-  /* margin-bottom: 1px; */
-  padding-left: 0;
+  margin-bottom: 1px;
 }
 
 

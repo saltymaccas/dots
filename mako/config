@@ -14,7 +14,7 @@ border-radius=10
 default-timeout=10000
 group-by=summary
 
-format=<b>%s</b>\n%b\n%b
+format=<b>%s</b>\n%b
 
 [app-name=volume]
 background-color=#1c1c1e
