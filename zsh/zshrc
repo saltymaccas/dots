@@ -188,6 +188,7 @@ setopt promptsubst         # enable command substitution in prompt
 autoload -U colors && colors
 
 enable_syntax_highlighting
+enable_starship
 enable_kitty_integration
 enable_colors
 enable_autosuggestions
