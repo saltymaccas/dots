@@ -188,7 +188,6 @@ setopt promptsubst         # enable command substitution in prompt
 autoload -U colors && colors
 
 enable_syntax_highlighting
-enable_starship
 enable_kitty_integration
 enable_colors
 enable_autosuggestions
@@ -197,6 +196,7 @@ load_alias_file
 enable_hyprland
 configure_history 
 setup_prompt
+enable_starship
 
 
 alias fetch="clear && ${FETCH:-fastfetch}"
