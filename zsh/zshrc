@@ -196,8 +196,6 @@ load_alias_file
 enable_hyprland
 configure_history 
 setup_prompt
-enable_starship
-
 
 alias fetch="clear && ${FETCH:-fastfetch}"
 alias ll='ls -l'
