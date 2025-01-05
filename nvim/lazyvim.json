@@ -1,10 +1,10 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.lang.elixir",
-    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.lang.markdown",
-    "lazyvim.plugins.extras.lang.python",
-    "lazyvim.plugins.extras.lang.sql"
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
     "NEWS.md": "10960"

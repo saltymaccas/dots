@@ -12,7 +12,45 @@ return {
   },
   {
     "folke/noice.nvim",
-    enabled = false,
+    opts = {
+      cmdline = {
+        enabled = true,
+        view = "cmdline",
+      },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      terminal = {
+        win = {
+          width = 0.3,
+          position = "right",
+        },
+      },
+    },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      heading = {
+        sign = true,
+        --- icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+        position = "overlay",
+        backgrounds = {},
+      },
+      code = {
+        disable_background = true,
+        boarder = "thick",
+        above = "▄",
+        below = "𝪈",
+        -- below = "▀",
+        -- above = "",
+        -- below = "",
+      },
+    },
   },
   { "3rd/image.nvim", enabled = false },
   {
