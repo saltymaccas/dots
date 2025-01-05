@@ -7,6 +7,7 @@
   "height": 30,
   "modules-left": [
     "hyprland/workspaces",
+    "hyprland/submap"
   ],
   "modules-center": [
     "clock"
@@ -164,19 +165,21 @@
     "format": "{}",
     "max-length": 120
   },
+  "hyprland/submap": {
+    "format": "{}"
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "disable-markup": false,
     "all-outputs": true,
     "format": "  {icon}  ",
-    //"format":"{icon}",
     // "format-icons": {
-    //     "1": "",
-    //     "2": "",
-    //     "3": "󰙯",
-    //     "4": "",
-    //     "5": "",
-    //     "6": "",
+    //   "1": "",
+    //   "2": "",
+    //   "3": "󰙯",
+    //   "4": "",
+    //   "5": "",
+    //   "6": "",
     // }
   },
   "pulseaudio": {
