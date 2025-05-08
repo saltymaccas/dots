@@ -22,6 +22,7 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      dashboard = { enabled = false },
       terminal = {
         win = {
           width = 0.3,
