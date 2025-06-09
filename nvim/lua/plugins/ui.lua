@@ -29,6 +29,17 @@ return {
           position = "right",
         },
       },
+      ---@class snacks.image.Config
+      image = {
+        doc = {
+          enabled = true,
+          inline = false,
+          float = true,
+          conceal = true,
+          max_width = 80,
+          max_height = 40,
+        },
+      },
     },
   },
   {
@@ -38,12 +49,12 @@ return {
     opts = {
       heading = {
         sign = true,
-        --- icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+        icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
         position = "overlay",
         backgrounds = {},
       },
       code = {
-        disable_background = true,
+        -- disable_background = true,
         boarder = "thick",
         above = "▄",
         below = "𝪈",
@@ -51,9 +62,11 @@ return {
         -- above = "",
         -- below = "",
       },
+      indent = {
+        enabled = true,
+      },
     },
   },
-  { "3rd/image.nvim", enabled = false },
   {
     "3rd/diagram.nvim",
     enabled = false,

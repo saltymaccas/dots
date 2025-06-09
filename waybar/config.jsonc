@@ -139,8 +139,8 @@
     "format": " {}%", // Icon: memory
     "on-click": "kitty -e 'btop'",
     "states": {
-      "warning": 70,
-      "critical": 90
+      "warning": 90,
+      "critical": 95
     }
   },
   "network": {

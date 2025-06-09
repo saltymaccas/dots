@@ -19,3 +19,5 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     })
   end,
 })
+
+vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")

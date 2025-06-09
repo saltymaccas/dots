@@ -211,6 +211,8 @@ alias se="sudoedit"
 alias v="$EDITOR"
 # Default Opts
 alias rsync="rsync --info=progress2"
+# More spesific aliasse
+alias podman-unit-generate-test="/usr/lib/systemd/system-generators/podman-system-generator --dryrun"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
