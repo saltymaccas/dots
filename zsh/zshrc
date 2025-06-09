@@ -1,3 +1,7 @@
+# OPTIONS
+ENABLE_SYSMANAGEMENT_ALIAS="true"
+
+
 configure_history () {
 	HISTFILE=~/.zsh_history
 	HISTSIZE=1000
@@ -213,6 +217,15 @@ alias v="$EDITOR"
 alias rsync="rsync --info=progress2"
 # More spesific aliasse
 alias podman-unit-generate-test="/usr/lib/systemd/system-generators/podman-system-generator --dryrun"
+
+if [[ "$ENABLE_SYSMANAGEMENT_ALIAS" == "true" ]]; then
+  alias sdr="systemctl daemon-reload"
+  alias sr="systemctl restart"
+  alias jeu="journalctl -eu"
+  alias jfu="journalctl -fu"
+  alias jf="journalctl -f"
+fi
+
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
