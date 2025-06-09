@@ -224,6 +224,8 @@ if [[ "$ENABLE_SYSMANAGEMENT_ALIAS" == "true" ]]; then
   alias jeu="journalctl -eu"
   alias jfu="journalctl -fu"
   alias jf="journalctl -f"
+  # USAGE: create-sys-user <uid> <login>
+  alias create-sys-user="useradd -M -s /usr/sbin/nologin -u"
 fi
 
 
