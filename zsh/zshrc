@@ -209,6 +209,8 @@ alias datestamp="date -u +"%Y-%m-%d""
 alias s="sudo"
 alias se="sudoedit"
 alias v="$EDITOR"
+# Default Opts
+alias rsync="rsync --info=progress2"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
