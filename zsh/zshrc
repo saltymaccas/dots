@@ -222,6 +222,7 @@ if [[ "$ENABLE_SYSMANAGEMENT_ALIAS" == "true" ]]; then
   alias sdr="systemctl daemon-reload"
   alias sr="systemctl restart"
   alias jeu="journalctl -eu"
+  alias je="journalctl -e"
   alias jfu="journalctl -fu"
   alias jf="journalctl -f"
   # USAGE: create-sys-user <uid> <login>
