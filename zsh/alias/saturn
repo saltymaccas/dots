@@ -1,5 +1,0 @@
-alias swww-cur-img="swww query | head -n 1 | cut -d ',' -f 3 | cut -d ' ' -f 5"
-alias tclock="tty-clock -c -C 5"
-alias synthwave="mpv --no-video 'https://www.youtube.com/watch?v=4xDzrJKXOOY'"
-alias lofi="mpv --no-video 'https://www.youtube.com/watch?v=jfKfPfyJRdk'"
-alias neofetch="fastfetch"
