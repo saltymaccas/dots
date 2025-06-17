@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 if [[ "${ENABLE_KITTY:-true}" == true && $TERM == *kitty* ]]; then
-  if [[ $SHELL != "/usr/bin/zsh" ]]; then
+  if [[ $SHELL != "/usr/bin/zsh" && $SHELL != "/bin/zsh" ]]; then
     echo "WARNING: kitty_integration: only works with zsh"
     echo "detected shell: $SHELL"
   fi
