@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+if [ "${ENABLE_ZOXIDE:-true}" = true ] && [ -f /bin/zoxide ]; then
+  shell=$(echo "$SHELL" | grep -o -E "[a-z]+$")
+  eval "$(zoxide init "$shell")"
+fi

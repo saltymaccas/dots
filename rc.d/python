@@ -1,0 +1,105 @@
+#!/bin/bash
+
+if command -v python3 &>/dev/null; then
+  #
+  # venv - A shell function to easily create and activate Python virtual environments.
+  #
+  # This function simplifies Python project setup by automating the creation and
+  # activation of a virtual environment within a standardized `.venv` directory.
+  #
+  # --- How to Use ---
+  #
+  # 1.  Add this entire function to your shell configuration file
+  #     (e.g., ~/.zshrc for Zsh, or ~/.bashrc for Bash).
+  #
+  # 2.  Reload your shell configuration by running `source ~/.zshrc`
+  #     or by opening a new terminal window.
+  #
+  # 3.  Navigate to your project's root directory.
+  #
+  # 4.  Run the command:
+  #
+  #     - `venv`
+  #       If a `.venv` directory exists, it will activate it.
+  #       If not, it will create it using the `python3` command and then activate it.
+  #
+  #     - `venv python3.9`
+  #       Same as above, but explicitly uses `python3.9` to create the
+  #       virtual environment. You can use any valid python command.
+  #
+  # --- Features ---
+  #
+  # - Idempotent: Safe to run multiple times.
+  # - Smart Activation: Activates an existing `.venv` if found.
+  # - Smart Creation: Creates a `.venv` if one doesn't exist.
+  # - Version-Aware: Lets you specify which Python version to use.
+  # - User-Friendly: Provides clear, color-coded feedback.
+  # - Safe: Checks for dependencies and handles common errors gracefully.
+  #
+  pvenv() {
+    # --- Configuration ---
+    # The name of the virtual environment directory.
+    VENV_DIR=".venv"
+    # The default python command to use if none is specified.
+    DEFAULT_PYTHON="python3"
+
+    # --- Color Codes for Output ---
+    # Uses tput for better compatibility across terminals.
+    C_BLUE=$(tput setaf 4)
+    C_GREEN=$(tput setaf 2)
+    C_YELLOW=$(tput setaf 3)
+    C_RED=$(tput setaf 1)
+    C_BOLD=$(tput bold)
+    C_NC=$(tput sgr0) # No Color / Reset
+
+    # --- Logic ---
+    # Use the first argument as the Python command, otherwise use the default.
+    PYTHON_CMD=${1:-$DEFAULT_PYTHON}
+
+    # Check if we are already inside a virtual environment.
+    # The `$VIRTUAL_ENV` variable is set by the venv's activate script.
+    if [ -n "$VIRTUAL_ENV" ]; then
+      # Check if the active venv is the one in the current directory.
+      # Use `pwd -P` to resolve symlinks and get the physical path.
+      if [ "$VIRTUAL_ENV" = "$(pwd -P)/$VENV_DIR" ]; then
+        printf "%s\n" "${C_YELLOW}You are already in this project's virtual environment.${C_NC}"
+        printf "%s\n" "${C_YELLOW}To exit, run: ${C_BOLD}deactivate${C_NC}"
+        return 0
+      else
+        printf "%s\n" "${C_RED}Error: You are in a different virtual environment.${C_NC}"
+        printf "%s\n" "${C_RED}Please run ${C_BOLD}deactivate${C_NC} before activating a new one.${C_NC}"
+        return 1
+      fi
+    fi
+
+    # If the .venv directory exists, activate it.
+    if [ -d "$VENV_DIR" ]; then
+      if [ -f "$VENV_DIR/bin/activate" ]; then
+        printf "%s\n" "${C_GREEN}Activating existing virtual environment...${C_NC}"
+        # The 'source' command executes the script in the current shell.
+        . "./$VENV_DIR/bin/activate"
+      else
+        printf "%s\n" "${C_RED}Error: '.venv' directory found, but it's not a valid environment (missing bin/activate).${C_NC}" >&2
+        return 1
+      fi
+    # If the .venv directory does NOT exist, create it.
+    else
+      # First, check if the specified python command is available.
+      if ! command -v "$PYTHON_CMD" >/dev/null 2>&1; then
+        printf "%s\n" "${C_RED}Error: Python command not found: ${C_BOLD}$PYTHON_CMD${C_NC}" >&2
+        printf "%s\n" "${C_RED}Please install it or specify an available version (e.g., 'venv python3.9').${C_NC}" >&2
+        return 1
+      fi
+
+      printf "%s\n" "${C_BLUE}Creating new virtual environment with ${C_BOLD}$PYTHON_CMD${C_NC}...${C_NC}"
+      # Create the virtual environment using Python's built-in `venv` module.
+      if "$PYTHON_CMD" -m venv "$VENV_DIR"; then
+        printf "%s\n" "${C_GREEN}Activating new virtual environment...${C_NC}"
+        . "./$VENV_DIR/bin/activate"
+      else
+        printf "%s\n" "${C_RED}Error: Failed to create the virtual environment.${C_NC}" >&2
+        return 1
+      fi
+    fi
+  }
+fi

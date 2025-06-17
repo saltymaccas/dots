@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+if [[ "${ENABLE_KITTY:-true}" == true && $TERM == *kitty* ]]; then
+  if [[ $SHELL != "/usr/bin/zsh" ]]; then
+    echo "WARNING: kitty_integration: only works with zsh"
+    echo "detected shell: $SHELL"
+  fi
+  if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+    kitty-integration
+    unfunction kitty-integration
+  fi
+  alias icat="kitten icat"
+  alias mpvcat="mpv -vo kitty"
+  alias kssh="kitten ssh"
+fi
