@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 DOTS_DIR=${0:A:h}
 RC_DIR="$DOTS_DIR/rc.d"
-if [ "$SHELL" = "/usr/bin/zsh" ]; then 
+if [ "$SHELL" = "/usr/bin/zsh" ] || [ "$SHELL" = "/bin/zsh" ]; then 
   . "$DOTS_DIR/zsh/zshrc"; 
 fi
 alias pubip='curl http://ifconfig.me'
