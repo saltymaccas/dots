@@ -1,0 +1,50 @@
+#!/usr/bin/bash
+DIR=$(dirname "$(readlink -f $0)")
+
+is_installed() {
+  if [ "$(stat -L -c '%i' "$HOME/.config/hypr")" == "$(stat -L -c '%i' "$DIR")" ]; then
+    echo true
+  else
+    echo false
+  fi
+}
+
+help() {
+  echo "Usage: manager [-h|--help] [--installed]"
+}
+
+install() {
+  if [[ $(is_installed) = "true" ]]; then
+    echo "already installed"
+  else
+    echo "backing up $HOME/.config/hypr"
+    mv "$HOME/.config/hypr" "$HOME/.config/hypr.bak"
+    echo "symlinking $DIR to $HOME/.config"
+    ln -s "$DIR" "$HOME/.config"
+  fi
+}
+
+default() {
+  echo "hypr config manager"
+  echo "installed: $(is_installed)"
+}
+
+case $1 in
+"-h" | "--help")
+  help
+  ;;
+"--installed")
+  is_installed
+  ;;
+"--install")
+  install
+  ;;
+"")
+  default
+  ;;
+*)
+  echo "not found $1"
+  help
+  ;;
+
+esac
