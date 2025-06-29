@@ -7,7 +7,6 @@ fi
 alias pubip='curl http://ifconfig.me'
 alias timestamp='date -u +'%Y-%m-%dT%H:%M:%SZ''
 alias datestamp='date -u +'%Y-%m-%d''
-alias v='$EDITOR'
 alias tclock="tty-clock -c -C 5"
 alias fetch='clear && fastfetch'
 alias neofetch="fastfetch"
