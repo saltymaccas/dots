@@ -1,0 +1,1 @@
+alias last-download='echo $(xdg-user-dir DOWNLOAD)/$(ls -t "$(xdg-user-dir DOWNLOAD)" | head -n 1)'
