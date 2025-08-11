@@ -1,9 +1,19 @@
 #!/usr/bin/sh
+
 DOTS_DIR=${0:A:h}
 RC_DIR="$DOTS_DIR/rc.d"
 if [ "$SHELL" = "/usr/bin/zsh" ] || [ "$SHELL" = "/bin/zsh" ]; then 
   . "$DOTS_DIR/zsh/zshrc"; 
 fi
+
+run_dropins () {
+  for file in $RC_DIR/*; do
+    if [ -f "$file" ]; then
+      . "$file"
+    fi
+  done
+}
+
 alias pubip='curl http://ifconfig.me'
 alias timestamp='date -u +'%Y-%m-%dT%H:%M:%SZ''
 alias datestamp='date -u +'%Y-%m-%d''
@@ -29,11 +39,7 @@ if [ -v "podman" ]; then alias podman-unit-generate-test="/usr/lib/systemd/syste
 if [ -v "swww" ]; then alias swww-cur-img="swww query | head -n 1 | cut -d ',' -f 3 | cut -d ' ' -f 5"; fi
 if [ -v "rsync" ]; then alias rsync='rsync --info=progress2'; fi
 
-for file in $RC_DIR/*; do
-  if [ -f "$file" ]; then
-    . "$file"
-  fi
-done
+run_dropins 
 
 unset has_command
 
