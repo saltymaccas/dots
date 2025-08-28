@@ -2,7 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      transparent = true,
+      transparent = false,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
@@ -21,7 +21,7 @@ return {
     name = "rose-pine",
     opts = {
       styles = {
-        transparency = true,
+        transparency = false,
       },
     },
   },
