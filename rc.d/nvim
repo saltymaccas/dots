@@ -1,2 +1,3 @@
 alias v="nvim"
 alias vi="NVIM_APPNAME=nvim-bare nvim"
+alias nvchad="NVIM_APPNAME=nvchad nvim"

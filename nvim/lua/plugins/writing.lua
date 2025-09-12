@@ -7,7 +7,7 @@ return {
   },
   { -- typst
     "chomosuke/typst-preview.nvim",
-    enable = false,
+    enable = true,
     ft = "typst",
     opts = {},
   },

@@ -1,5 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
+  enabled = false,
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
@@ -24,6 +25,10 @@ return {
         name = "personal",
         path = "~/notes",
       },
+    },
+    daily_notes = {
+      folder = "daily",
+      default_tags = { "daily-note" },
     },
   },
 }
