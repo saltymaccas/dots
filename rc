@@ -1,18 +1,13 @@
-#!/usr/bin/sh
-
+#!/usr/bin/env bash
 DOTS_DIR=${0:A:h}
+[[ "$RC_DEBUG_MODE" == true ]] && echo "found dots dir $DOTS_DIR"
 RC_DIR="$DOTS_DIR/rc.d"
-if [ "$SHELL" = "/usr/bin/zsh" ] || [ "$SHELL" = "/bin/zsh" ]; then 
-  . "$DOTS_DIR/zsh/zshrc"; 
-fi
+[[ "$RC_DEBUG_MODE" == true ]] && echo "rc dir: $RC_DIR"
 
-run_dropins () {
-  for file in $RC_DIR/*; do
-    if [ -f "$file" ]; then
-      . "$file"
-    fi
-  done
-}
+if [ "$SHELL" = "/usr/bin/zsh" ] || [ "$SHELL" = "/bin/zsh" ]; then
+  [[ "$RC_DEBUG_MODE" == true ]] && echo "zsh detected as shell"
+  . "$DOTS_DIR/zsh/zshrc"
+fi
 
 alias pubip='curl http://ifconfig.me'
 alias timestamp='date -u +'%Y-%m-%dT%H:%M:%SZ''
@@ -39,9 +34,11 @@ if [ -v "podman" ]; then alias podman-unit-generate-test="/usr/lib/systemd/syste
 if [ -v "swww" ]; then alias swww-cur-img="swww query | head -n 1 | cut -d ',' -f 3 | cut -d ' ' -f 5"; fi
 if [ -v "rsync" ]; then alias rsync='rsync --info=progress2'; fi
 
-run_dropins 
+for file in $RC_DIR/*; do
+  if [ -f "$file" ]; then
+    [[ "$RC_DEBUG_MODE" == true ]] && echo "sourcing: $file"
+    source $file
+  fi
+done
 
 unset has_command
-
-
-
