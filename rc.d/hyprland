@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 if [ "${ENABLE_HYPRLAND:-true}" = true ] && [ "$XDG_SESSION_DESKTOP" = "Hyprland" ]; then
   alias windows="hyprctl clients"
 fi
