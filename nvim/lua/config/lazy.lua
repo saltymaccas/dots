@@ -22,7 +22,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "rose-pine",
+        colorscheme = "catppuccin",
       },
     },
     -- import/override with your plugins
@@ -46,12 +46,12 @@ require("lazy").setup({
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
-        "gzip",
+        -- "gzip",
         -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
+        -- "tarPlugin",
+        -- "tohtml",
         "tutor",
         "zipPlugin",
       },

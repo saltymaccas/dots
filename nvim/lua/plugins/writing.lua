@@ -1,6 +1,7 @@
 return {
   {
     "lervag/vimtex",
+    enable = false,
     config = function()
       vim.g.vimtex_view_method = "zathura"
     end,
@@ -9,6 +10,8 @@ return {
     "chomosuke/typst-preview.nvim",
     enable = true,
     ft = "typst",
-    opts = {},
+    opts = {
+      -- open_cmd = "zathura %s",
+    },
   },
 }

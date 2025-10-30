@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 if [ "${ENABLE_STARSHIP:-true}" = true ] && [ -f /bin/starship ]; then
   shell=$(echo "$SHELL" | grep -o -E "[a-z]+$")
-  export STARSHIP_CONFIG="$DOTS_DIR/starship/pills.toml"
+  export STARSHIP_CONFIG="${STARSHIP_CONFIG:-$DOTS_DIR/starship/pills.toml}"
   eval "$(/bin/starship init "$shell")"
 fi
