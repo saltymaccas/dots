@@ -6,8 +6,8 @@
   // If height property would be not present, it'd be calculated dynamically
   "height": 30,
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/submap"
+    "hyprland/workspaces"
+    // "hyprland/submap"
   ],
   "modules-center": [
     "clock"

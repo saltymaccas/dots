@@ -4,7 +4,7 @@ DOTS_DIR=${0:A:h}
 RC_DIR="$DOTS_DIR/rc.d"
 [[ "$RC_DEBUG_MODE" == true ]] && echo "rc dir: $RC_DIR"
 
-if [ "$SHELL" = "/usr/bin/zsh" ] || [ "$SHELL" = "/bin/zsh" ]; then
+if [[ -n $ZSH_VERSION ]]; then
   [[ "$RC_DEBUG_MODE" == true ]] && echo "zsh detected as shell"
   . "$DOTS_DIR/zsh/zshrc"
 fi
