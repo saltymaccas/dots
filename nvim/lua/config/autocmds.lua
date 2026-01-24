@@ -20,4 +20,12 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   end,
 })
 
-vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+vim.api.nvim_create_augroup("markdown_settings", {})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = "markdown_settings",
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
