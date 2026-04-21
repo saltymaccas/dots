@@ -2,9 +2,9 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      transparent = false,
+      transparent = true,
       styles = {
-        sidebars = "transparent",
+        -- sidebars = "transparent",
         floats = "transparent",
       },
     },
@@ -13,7 +13,10 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     opts = {
-      transparent_background = false,
+      transparent_background = true,
+      float = {
+        transparent = true,
+      },
     },
   },
   {

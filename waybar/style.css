@@ -1,7 +1,7 @@
+@import "mocha.css";
 @define-color bg-color rgba(17, 17, 27, 0.8);
-@define-color primary-color #cba6f7;
 @define-color critical-color #f38ba8;
-@define-color warning-color #fab387;
+@define-color lock-color @error_container;
 
 @keyframes blink-warning {
   70% {
@@ -27,7 +27,7 @@
 
 * {
   border: none;
-  border-radius: 3px;
+  border-radius: 8px;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -53,11 +53,15 @@ window#waybar {
 #window,
 #custom-performance,
 #custom-power,
+#custom-powermenu,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
 #custom-audio {
-  background-color: @bg-color;
-  border-radius: 3px;
-  padding: 0px 6px;
-  margin: 0px 3px;
+  background-color: @surface;
+  color: @on_surface;
+  padding: 0px 8px;
+  margin: 0px 4px;
 }
 
 #battery,
@@ -77,11 +81,11 @@ window#waybar {
 }
 
 #battery.warning {
-  color: @warning-color;
+  color: @error_container;
 }
 
 #battery.critical {
-  color: @critical-color;
+  color: @error;
 }
 
 #battery.warning.discharging {
@@ -96,13 +100,13 @@ window#waybar {
 
 #cpu.warning,
 #memory.warning {
-  color: @warning-color;
+  color: @tertiary;
 }
 
 #cpu.critical,
 #memory.critical,
 #temperature.critical {
-  color: @critical-color;
+  color: @error;
 }
 
 #memory {
@@ -119,7 +123,7 @@ window#waybar {
 }
 
 #network.disconnected {
-  color: orange;
+  color: @tertiary;
 }
 
 #submap {
@@ -132,12 +136,25 @@ window#waybar {
 
 #workspaces {
   padding: 0;
+  color: @on_surface;
+  background-color: @surface;
+}
+
+#workspaces button{
+  color: @on_surface;
 }
 
 
 #workspaces button.active {
-  background-color: @primary-color;
-  color: #4c4f69;
+  background-color: @primary;
+  color: @on_primary;
   border-radius: 3px;
   margin: 3px;
 }
+
+#workspaces button.urgent {
+  background-color: @error_container;
+  color: @on_error_container
+}
+
+

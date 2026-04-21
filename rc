@@ -30,6 +30,7 @@ alias jeu="journalctl -eu"
 alias je="journalctl -e"
 alias jfu="journalctl -fu"
 alias jf="journalctl -f"
+alias getldown='mv "$(xdg-user-dir DOWNLOAD)/$(ls -t "$(xdg-user-dir DOWNLOAD)" | head -n 1)" ./'
 if [ -v "podman" ]; then alias podman-unit-generate-test="/usr/lib/systemd/system-generators/podman-system-generator --dryrun"; fi
 if [ -v "swww" ]; then alias swww-cur-img="swww query | head -n 1 | cut -d ',' -f 3 | cut -d ' ' -f 5"; fi
 if [ -v "rsync" ]; then alias rsync='rsync --info=progress2'; fi

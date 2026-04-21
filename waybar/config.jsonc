@@ -25,7 +25,7 @@
     "orientation": "inherit",
     "modules": [
       "battery",
-      "power-profiles-daemon",
+      "power-profiles-daemon"
     ]
   },
   "group/custom-audio": {
@@ -48,13 +48,13 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-power",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/powermenu", // First element is the "group leader" and won't ever be hidden
       "custom/quit",
       "custom/lock",
-      "custom/reboot",
+      "custom/reboot"
     ]
   },
   "backlight": {
@@ -62,7 +62,7 @@
     "format-icons": [
       "󱩎",
       "󱩒",
-      "󰛨",
+      "󰛨"
     ]
   },
   "idle_inhibitor": {
@@ -90,7 +90,7 @@
     ]
   },
   "power-profiles-daemon": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-icons": {
       "default": "",
       "performance": "",
@@ -145,11 +145,11 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": " ", // Icon: wifi
+    "format-wifi": "", // Icon: wifi
     "format-ethernet": " ", // Icon: ethernet
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}",
-    "on-click": "kitty -e 'nmtui'",
+    "on-click": "kitty -e 'nmtui'"
   },
   "network#vpn": {
     "interface": "tun0",
@@ -246,7 +246,7 @@
   "custom/lock": {
     "format": "󰍁",
     "tooltip": false,
-    "on-click": "swaylock"
+    "on-click": "hyprlock"
   },
   "custom/reboot": {
     "format": "󰜉",

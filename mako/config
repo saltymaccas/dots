@@ -1,9 +1,9 @@
 default-timeout=300
 
 
-font=Ibm Plex Sans 11
+font=Jetbrains Mono
 icons=1
-background-color=#1c1c1eB3
+background-color=#1e1e2eB3
 text-color=#cdd6f4
 width=350
 margin=0,20,20
@@ -17,12 +17,12 @@ group-by=summary
 format=<b>%s</b>\n%b
 
 [app-name=volume]
-background-color=#1c1c1e
-progress-color=over #1e1e2e
 default-timeout=500
 anchor=center
 border-size=2
 text-alignment=center
 max-icon-size=16
 format=<b>%s</b>
+
+
 

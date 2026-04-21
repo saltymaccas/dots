@@ -7,7 +7,7 @@ if [[ "${ENABLE_KITTY:-true}" == true && $TERM == *kitty* ]]; then
     kitty-integration
     unfunction kitty-integration
   fi
-  alias icat="kitten icat"
+  # alias icat="kitten icat"
   alias mpvcat="mpv -vo kitty"
   alias kssh="kitten ssh"
 fi
