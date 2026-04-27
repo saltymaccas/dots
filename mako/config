@@ -3,7 +3,7 @@ default-timeout=300
 
 font=Jetbrains Mono
 icons=1
-background-color=#1e1e2eB3
+background-color=#11111bB3
 text-color=#cdd6f4
 width=350
 margin=0,20,20
@@ -13,6 +13,8 @@ border-color=#cba6f7
 border-radius=10
 default-timeout=10000
 group-by=summary
+progress-color=#cba6f7B3
+
 
 format=<b>%s</b>\n%b
 

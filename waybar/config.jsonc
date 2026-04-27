@@ -4,7 +4,7 @@
   "position": "top",
   "margin": 3,
   // If height property would be not present, it'd be calculated dynamically
-  "height": 30,
+  "height": 10,
   "modules-left": [
     "hyprland/workspaces"
     // "hyprland/submap"
@@ -78,7 +78,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon}  {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": [
@@ -106,7 +106,7 @@
   },
   "cpu": {
     "interval": 5,
-    "format": " {usage}% ({load})", // Icon: microchip
+    "format": "  {usage}% ({load})", // Icon: microchip
     // "format": " {usage}%", // Icon: microchip
     "states": {
       "warning": 70,
@@ -132,11 +132,11 @@
     // Signal sent by Sway key binding (~/.config/sway/key-bindings)
     "signal": 1, // SIGHUP
     "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/keyhint.sh",
+    "on-click": "/.config/waybar/scripts/keyhint.sh"
   },
   "memory": {
     "interval": 5,
-    "format": " {}%", // Icon: memory
+    "format": "  {}%", // Icon: memory
     "on-click": "kitty -e 'btop'",
     "states": {
       "warning": 90,
@@ -145,7 +145,7 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": "", // Icon: wifi
+    "format-wifi": " ", // Icon: wifi
     "format-ethernet": " ", // Icon: ethernet
     "format-disconnected": "⚠  Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}",
@@ -196,7 +196,7 @@
   },
   "pulseaudio": {
     "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "format-bluetooth": "{volume}% {icon}  {format_source}",
     "format-bluetooth-muted": " {icon}  {format_source}",
     "format-muted": "",
@@ -212,15 +212,15 @@
         ""
       ]
     },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol",
+    // "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "hyprctl dispatch exec [float] hyprpwcenter",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
-    "format-source-muted": "",
+    "format-source-muted": " ",
     "on-click": "pamixer --default-source -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer --default-source -i 5",
