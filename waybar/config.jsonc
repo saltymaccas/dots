@@ -4,7 +4,7 @@
   "position": "top",
   "margin": 3,
   // If height property would be not present, it'd be calculated dynamically
-  "height": 10,
+  "height": 28,
   "modules-left": [
     "hyprland/workspaces"
     // "hyprland/submap"
