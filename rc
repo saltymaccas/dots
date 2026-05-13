@@ -5,13 +5,13 @@ RC_DIR="$DOTS_DIR/rc.d"
 [[ "$RC_DEBUG_MODE" == true ]] && echo "rc dir: $RC_DIR"
 
 if [[ -n $ZSH_VERSION ]]; then
-  [[ "$RC_DEBUG_MODE" == true ]] && echo "zsh detected as shell"
-  . "$DOTS_DIR/zsh/zshrc"
+    [[ "$RC_DEBUG_MODE" == true ]] && echo "zsh detected as shell"
+    . "$DOTS_DIR/zsh/zshrc"
 fi
 
 alias pubip='curl http://ifconfig.me'
 alias timestamp='date -u +'%Y%m%dT%H%M%SZ''
-alias datestamp='date -u +'%Y%m%d''
+alias datestamp='date -u +'%Y-%m-%d''
 alias tclock="tty-clock -c -C 5"
 alias fetch='clear && fastfetch'
 alias neofetch="fastfetch"
@@ -36,10 +36,10 @@ if [ -v "swww" ]; then alias swww-cur-img="swww query | head -n 1 | cut -d ',' -
 if [ -v "rsync" ]; then alias rsync='rsync --info=progress2'; fi
 
 for file in $RC_DIR/*; do
-  if [ -f "$file" ]; then
-    [[ "$RC_DEBUG_MODE" == true ]] && echo "sourcing: $file"
-    source $file
-  fi
+    if [ -f "$file" ]; then
+        [[ "$RC_DEBUG_MODE" == true ]] && echo "sourcing: $file"
+        source $file
+    fi
 done
 
 unset has_command
