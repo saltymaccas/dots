@@ -1,4 +1,32 @@
+# vim/neovim
+*.swp
+*.swo
+*~
+
+# backup files
+*.bak
+*-backup
+*-backup-*
+*.toml-*
+
+# lazy artifacts
 nvim/lazy-lock.json
 nvim/lazyvim.json
+
+# nushell
 nushell/history.txt
+
+# yazi
 yazi/vfs.toml
+
+# node
+node_modules/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# os
+.DS_Store
+Thumbs.db
